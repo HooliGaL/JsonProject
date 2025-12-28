@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <div class="form-group">
+    <label>Name: </label>
+    <input [(ngModel)]="person.name" />
+    <br />
+
+    <label>Id: </label>
+    <input [(ngModel)]="person.id" />
+  </div>
+
+  <button class="btn btn-secondary" (click)="addPerson()">Add</button>
+  <button class="btn btn-secondary" (click)="deletePerson()">Delete</button>
+  <button class="btn btn-secondary" (click)="updatePerson()">Update</button>
+
+  <br /><br />
+
+  <table class="table">
+    <thead>
+      <tr class="table-active">
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of people">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
